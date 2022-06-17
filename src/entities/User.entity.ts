@@ -10,14 +10,19 @@ import { Entity,
 export class User extends BaseEntity {
     @PrimaryGeneratedColumn()
     id! : number;
+    
     @Column()
     firstName!: string
+    
     @Column()
     lastName!: string;
-    @Column()
+    
+    @Column({unique: true})
     email!: string;
-    @Column()
+    
+    @Column({default: true})
     active!: boolean;
+    
     @Column()
     password!: string;
 
